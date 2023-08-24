@@ -3,9 +3,10 @@ import WeatherBackground from './components/WeatherBackground';
 
 function App() {
   return (
-    <WeatherBackground>
-      <div>Weather container</div>
-    </WeatherBackground>
+    <div className='main-container'>
+      <WeatherBackground>
+      </WeatherBackground>
+    </div>
   );
 }
 

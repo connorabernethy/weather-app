@@ -1,46 +1,50 @@
-.App {
-  text-align: center;
-  width: 100%;
+html, body, #app, #root, #app>div {
   height: 100%;
+  background: linear-gradient(0deg,#eafffb 0%, #c1edff 80%);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-cloud {
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.cloud {
+  z-index: 1;
+  font-size: 500px;
+  animation: cloud;
+  animation-duration: 20s;
+}
+
+@keyframes cloud {
+  from {
+    margin: 20px 0 0 0;
+  }
+  to {
+    margin: 20px 0 0 1000px;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  width: 35%;
+  height: 60%;
+  border-radius: 3px;
+  z-index: 2;
 }
 
 .clear-skies {
   background: linear-gradient(0deg,#eafffb 0%, #c1edff 80%);
   width: 100%;
   height: 100%;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

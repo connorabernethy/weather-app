@@ -19,14 +19,15 @@ const WeatherBackground = (props) => {
         })
         .catch(error => {
             console.log(error);
+            setWeather('undefined');
         })
     }, [])
 
 
     return(
-        <div className="clear-skies">
+        <div className="">
             <button onClick={() => {console.log(weather)}}>TEST</button>
-            <div>Current Temperature in Farenheit: {weather['current']['temp_f']}</div>
+            {weather ? (<div>Current Temp: {weather['current']['temp_f']}</div>) : <div>Weather undefined.</div>}
         </div>
     )
 }
