@@ -76,21 +76,6 @@ to {background-position: -100px 0px;background-size:2750px;}
   transition: 1s all ease-in;
 }
 
-.move-up {
-  margin-bottom: 25px;
-}
-
-.location-input {
-  opacity: 0;
-  padding: 10px;
-  transition: 1s all ease-in;
-}
-
-.location-input-active {
-  opacity: 1;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
 
 @keyframes fadein {
   from {
