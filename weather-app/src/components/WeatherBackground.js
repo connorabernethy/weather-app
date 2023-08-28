@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup, Card, CardHeader, CardBody, CardFooter, Divider, Heading, Stack, Text, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import React, { useState } from 'react';
+import { Button,  Card, CardBody, CardFooter, Divider, Heading, Stack, Text, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { Spinner } from '@chakra-ui/react';
-import Location from './Location';
 
 const api = {
     key: process.env.REACT_APP_WEATHER_API_KEY,
@@ -9,8 +8,6 @@ const api = {
 }
 
 const WeatherBackground = (props) => {
-
-    //const key = process.env.REACT_APP_WEATHER_API_KEY;
 
     const [weather, setWeather] = useState();
     const [location, setLocation] = useState();
@@ -48,9 +45,6 @@ const WeatherBackground = (props) => {
             })
     }
 
-    const button = document.getElementById('change-location');
-    const locationInput = document.getElementById('location-input');
-    const spinner = document.getElementById('spinner');
     return (
         <Card maxW='sm' w='xl' maxH='lg' h='lg' align='center' justifyContent='center' textAlign='center'>
             <CardBody>
