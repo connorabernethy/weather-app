@@ -1,26 +1,12 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import { Button, Stack } from "@chakra-ui/react";
+import React from "react";
 
-class Location extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-  }
-
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-      this.props.handleLocation(position.coords);
-    });
-  }
-
-  render() {
-    return (
-      <div>
-      </div>
-    );
-  }
+const Location = (props) => {
+  return(
+    <Stack width='100%' h='100%'>
+      <Button variant='outline'>Get Current Location</Button>
+    </Stack>
+  )
 }
 
 export default Location;
