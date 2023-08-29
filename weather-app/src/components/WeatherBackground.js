@@ -97,16 +97,11 @@ const WeatherBackground = (props) => {
                             }
                         }}></Input>
                 </InputGroup>
-                <ButtonGroup>
-                    <Button id="change-location" variant='solid' colorScheme='blue' onClick={() => {
+                <Button id="change-location" variant='solid' colorScheme='blue' onClick={() => {
                         search();
                     }}>
                         Get Weather
                     </Button>
-                    <Button variant='solid' colorScheme='twitter'>
-                        Get 5-day Forecast
-                    </Button>
-                </ButtonGroup>
             </CardFooter>
         </Card>
     )
