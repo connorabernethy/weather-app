@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button,  Card, CardBody, CardFooter, Divider, Heading, Stack, Text, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import { Button, Card, CardBody, CardFooter, Divider, Heading, Stack, Text, Input, InputGroup, InputLeftElement, ButtonGroup } from '@chakra-ui/react'
 import { Spinner } from '@chakra-ui/react';
 
 const api = {
@@ -43,7 +43,7 @@ const WeatherBackground = (props) => {
                 console.log(error);
                 setIsLoading(false);
             })
-            setQuery('');
+        setQuery('');
     }
 
     return (
@@ -67,10 +67,14 @@ const WeatherBackground = (props) => {
                     </div>
                 ) : (
                     <Stack w='100%' h='100%' alignItems='center' justifyContent='center'>
-                        <Text>Welcome!</Text>
-                        <Divider />
-                        <Text>Click 'Get Weather' to get the weather forecast for your current location</Text>
-                        <Spinner className='spinner' id="spinner" />
+                        {!isLoading && (
+                            <div>
+                                <Text fontSize='3xl'>Welcome!</Text>
+                                <Divider />
+                                <Text>Click 'Get Weather' to get the weather forecast for your current location</Text>
+                                <Spinner className='spinner' id="spinner" />
+                            </div>
+                        )}
                     </Stack>
                 )}
             </CardBody>
@@ -84,20 +88,25 @@ const WeatherBackground = (props) => {
                         </svg>
                     </InputLeftElement>
                     <Input type="text" id="location-input" placeholder='Input new location...' value={query}
-                    onChange={(e) => {
-                        setQuery(e.target.value);
-                    }} 
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                            search();
-                        }
-                    }}></Input>
+                        onChange={(e) => {
+                            setQuery(e.target.value);
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                search();
+                            }
+                        }}></Input>
                 </InputGroup>
-                <Button id="change-location" variant='solid' colorScheme='blue' onClick={() => {
-                    search();
-                }}>
-                    Get Weather
-                </Button>
+                <ButtonGroup>
+                    <Button id="change-location" variant='solid' colorScheme='blue' onClick={() => {
+                        search();
+                    }}>
+                        Get Weather
+                    </Button>
+                    <Button variant='solid' colorScheme='twitter'>
+                        Get 5-day Forecast
+                    </Button>
+                </ButtonGroup>
             </CardFooter>
         </Card>
     )
