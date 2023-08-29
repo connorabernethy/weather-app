@@ -69,7 +69,7 @@ const WeatherBackground = (props) => {
                     <Stack w='100%' h='100%' alignItems='center' justifyContent='center'>
                         {!isLoading && (
                             <div>
-                                <Text fontSize='3xl'>Welcome!</Text>
+                                <Text fontSize='3xl' marginBottom='20px'>Welcome!</Text>
                                 <Divider />
                                 <Text>Click 'Get Weather' to get the weather forecast for your current location</Text>
                                 <Spinner className='spinner' id="spinner" />
